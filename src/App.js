@@ -2,6 +2,7 @@ import Radium from 'radium'
 import ClassAbort from './ClassAbort';
 import FuncAbort from './FuncAbort';
 import OutStyle from './OutStyle'
+import Header from './Header';
 
 /**
  * JSX语法
@@ -52,6 +53,8 @@ import OutStyle from './OutStyle'
  * b.类组件来说，直接定义 static defaultProps 来管理需要设置默认值的属性
  * 
  * 函数组件的类型校验，prop-types
+ * 
+ * 组件状态：状态就数据，因此组件状态指的就是某一个组件自己的数据 ,当我们修改某一个数据的时候，界面上的DOM中数据展示也会自动更新 
  */
 
 const name = '学习前端'
@@ -141,6 +144,7 @@ function App() {
       <p>{JSON.stringify(obj)}</p>
       <p title='自定义标签'>-----添加属性-----</p>
       <p title={name}>-----添加动态属性-----</p>
+      {/* 这里的箭头函数，就是为了获取this */}
       <button onClick={() => { handler1(1, 2) }}>点击事件1</button>
       <button onClick={(ev) => { handler2(ev) }}>点击事件2</button>
       <button onClick={handler1}>点击事件3</button>
@@ -176,6 +180,8 @@ function App() {
           <span>FuncAbort中的span标签</span>
         </FuncAbort>
       </div>
+
+      <div><Header></Header></div>
     </div>
   );
 }
