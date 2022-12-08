@@ -3,6 +3,7 @@ import ClassAbort from './ClassAbort';
 import FuncAbort from './FuncAbort';
 import OutStyle from './OutStyle'
 import Header from './Header';
+import C1 from './C1';
 
 /**
  * JSX语法
@@ -55,6 +56,13 @@ import Header from './Header';
  * 函数组件的类型校验，prop-types
  * 
  * 组件状态：状态就数据，因此组件状态指的就是某一个组件自己的数据 ,当我们修改某一个数据的时候，界面上的DOM中数据展示也会自动更新 
+ * 函数组件其实是无状态的，类组件是有状态的
+ * 
+ * 单向数据流动：将不同组件之前需要共享的数据都定义在上层
+ *
+ * 
+ * 类组件和函数组件？？
+ * this？？
  */
 
 const name = '学习前端'
@@ -164,7 +172,7 @@ function App() {
 
       <div> <OutStyle /></div>
 
-      <div>向组件传递数据</div>
+      <h3>向组件传递数据</h3>
       {/* <div><ClassAbort name={"小海加油"} age={18} /></div> */}
       <div>
         <ClassAbort {...objAbord} >
@@ -181,7 +189,8 @@ function App() {
         </FuncAbort>
       </div>
 
-      <div><Header></Header></div>
+      <div><Header>单向数据流动</Header></div>
+
     </div>
   );
 }

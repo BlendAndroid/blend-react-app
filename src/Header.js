@@ -1,4 +1,5 @@
 import { Component } from "react";
+import C1 from "./C1";
 
 class Header extends Component {
 
@@ -13,9 +14,13 @@ class Header extends Component {
     handler = () => {
         this.setState({
             name: "Compose学习",
-            age:++this.state.age
+            age: ++this.state.age
         })
+    }
 
+    // 定义状态的更新方法, 当前外只负责定义，在想要修改数据的地方会进行调用
+    dataFlow = ({ name, age }) => {
+        this.setState({ name, age })
     }
 
 
@@ -25,6 +30,8 @@ class Header extends Component {
                 {this.state.name}
                 {this.state.age}
                 <button onClick={this.handler}>改变属性</button>
+                <h3>{this.props.children}</h3>
+                <C1 {...this.state} change={this.dataFlow}></C1>
             </>
         )
     }
