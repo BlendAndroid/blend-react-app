@@ -54,7 +54,7 @@ class FormApp extends Component {
             ...this.state, ret
         }
 
-        console.log( ret)
+        console.log(ret)
 
     }
 
@@ -93,6 +93,10 @@ class FormApp extends Component {
                         <input type="submit"></input>
                     </form>
                 </div>
+
+                <h3>非受控表单</h3>
+                <input type="text" ref="username" />
+                <button onClick={() => { console.log(this.refs.username.value) }}>获取非受控表单数据</button>
             </div>
         )
     }
