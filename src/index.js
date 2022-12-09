@@ -5,10 +5,11 @@ import './form/form_style.css'
 import StudentApp from './student/StudentApp'
 
 import FormApp from './form/FormApp'
+import LifeCycleApp from './life_cycle/LifeCycleApp'
 
 ReactDOM.render(
   <React.StrictMode>
-    <StudentApp />
+    <LifeCycleApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
